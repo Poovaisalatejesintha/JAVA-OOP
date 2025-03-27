@@ -1,0 +1,55 @@
+abstract class Vehicle{
+    String vehicleNumber;
+    String brand;
+    double dailyRate;
+
+    public Vehicle(String vehicleNumber,String brand,double dailyRate){
+        this.vehicleNumber=vehicleNumber;
+        this.brand=brand;
+        this.dailyRate=dailyRate;
+    }
+    abstract double CalculateRent(int days);
+    void display(){
+        System.out.println("Vehicle Number:"+vehicleNumber);
+        System.out.println("Brand Name:"+brand);
+        System.out.println("Daily Rate:"+dailyRate);
+    }
+}
+class Car extends Vehicle{
+   Car(String vehicleNumber,String brand,double dailyRate){
+     super(vehicleNumber,brand,dailyRate);
+   }
+   double CalculateRent(int days){
+    return dailyRate*days;
+   }
+}
+class Bike extends Vehicle{
+   Bike(String vehicleNumber,String brand,double dailyRate){
+     super(vehicleNumber,brand,dailyRate);
+   }
+   double CalculateRent(int days){
+      return (dailyRate*days)*0.9;
+   }
+}
+public class VehicleRental{
+    public static void main(String[] args){
+        Car c =new Car("A12345","TATA",100.0);
+        Bike b =new Bike("B56780","R15",500.0);
+        c.display();
+        System.out.println("Car Rent:"+c.CalculateRent(4));
+        b.display();
+        System.out.println("Bike Rent:"+b.CalculateRent(5));
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OPTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Vehicle Number:A12345
+Brand Name:TATA
+Daily Rate:100.0
+Car Rent:400.0
+Vehicle Number:B56780
+Brand Name:R15
+Daily Rate:500.0
+Bike Rent:2250.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
