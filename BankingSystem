@@ -1,0 +1,58 @@
+abstract class BankAccount{
+    protected String accountNumber;
+    protected String holderName;
+    protected double balance;
+
+    public BankAccount(String accountNumber,String holderName,double balance)
+    {
+        this.accountNumber=accountNumber;
+        this.holderName=holderName;
+        this.balance=balance;
+    }
+    abstract double CalculateInterest();
+    void display()
+    {
+        System.out.println("Account Number:"+accountNumber);
+        System.out.println("Holder Name:"+holderName);
+        System.out.println("Balance:"+balance);
+    }
+}
+class SavingsAccount extends BankAccount{
+ SavingsAccount(String accountNumber,String holderName,double balance){
+    super(accountNumber,holderName,balance);
+ }
+    double CalculateInterest(){
+         return balance*0.4;
+    }
+}
+class CurrentAccount extends BankAccount{
+  CurrentAccount(String accountNumber,String holderName,double balance ){
+    super(accountNumber,holderName,balance);
+  }
+    double CalculateInterest(){
+        return balance*0.02;
+    }
+}
+public class BankingSystem{
+    public static void main(String[] args){
+        SavingsAccount SA =new SavingsAccount("A12345","Ananya",1000.0);
+        CurrentAccount CA =new CurrentAccount("B56780","Ronaldo",5000.0);
+        SA.display();
+        System.out.println("Savings Interest:"+SA.CalculateInterest());
+        CA.display();
+        System.out.println("Current Interest:"+CA.CalculateInterest());
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Account Number:A12345
+Holder Name:Ananya
+Balance:1000.0
+Savings Interest:400.0
+Account Number:B56780
+Holder Name:Ronaldo
+Balance:5000.0
+Current Interest:100.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
