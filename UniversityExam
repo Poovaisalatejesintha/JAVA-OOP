@@ -1,0 +1,74 @@
+abstract class Exam{ 
+    protected String examId;
+    protected String subject;
+    protected double totalMarks;
+
+    Exam(String examId,String subject,double totalMarks){
+        this.examId=examId;
+        this.subject=subject;
+        this.totalMarks=totalMarks;
+    }
+    abstract boolean evaluateResult();
+    void displayResult()
+   {
+     System.out.println("Exam ID:"+examId);
+     System.out.println("Subject:"+subject);
+     System.out.println(evaluateResult());
+   }
+}
+
+class TheoryExam extends Exam{
+TheoryExam(String examId,String subject,double totalMarks)
+{
+   super(examId,subject,totalMarks);
+}
+      public boolean evaluateResult()
+      {
+      if(totalMarks>=40)
+      {
+        System.out.println("Evaluate Result:Pass");
+           return true;
+      }
+      else
+       {
+         return false;
+       }
+      }
+}
+class PracticalExam extends Exam{
+    PracticalExam(String examId,String subject,double totalMarks)
+    {
+       super(examId,subject,totalMarks);
+    }
+    public boolean evaluateResult(){
+        if(totalMarks>=50)
+        {
+            System.out.println("Evaluate Result:Pass");
+            return true;
+        }
+        else
+        {  
+            return false;
+        }
+        
+    }
+    }
+public class UniversityExam {
+    public static void main(String[] args) {
+        TheoryExam te=new TheoryExam("T101","Math",45);
+        PracticalExam pe=new PracticalExam("p202","Physicslab",48);
+        te.displayResult();
+        pe.displayResult();
+}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exam ID:T101
+Subject:Math
+Evaluate Result:Pass
+true
+Exam ID:p202
+Subject:Physicslab
+false
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
