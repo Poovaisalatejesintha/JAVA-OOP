@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class UsernameValidator{
+public static boolean isValidUsername(String username)
+{
+ return username.matches("[a-z A-z 0-9] {6,}");
+}
+public static void main(String[] args){
+ System.out.println("Enter the UserName:");
+ Scanner scanner=new Scanner(System.in);
+ String username=scanner.next();
+  if(isValidUsername(username))
+  {
+    System.out.println("Valid User Name!");
+  }
+  else{
+     System.out.println("Invalid username! it must be atleast 6 characters long and contain Only letter and digits");
+  }
+}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter the UserName:
+Poovai23
+Valid User Name!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enter the UserName:
+1234
+Invalid username! it must be atleast 6 characters long and contain Only letter and digits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
