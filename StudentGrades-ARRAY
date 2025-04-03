@@ -1,0 +1,40 @@
+public class StudentGrades{
+    public static void main(String[] args){
+        int[] marks={85,92,78,90,88};
+        int total=0,max=marks[0],min=marks[0],countAboveAvg=0;
+        for(int mark:marks)
+        {
+            total+=mark;
+            if(mark>max)
+            {
+                max=mark;
+            }
+            if(mark<min)
+            {
+                min=mark;
+            }
+        }
+        double average=(double)total/marks.length;
+        for(int mark:marks)
+        {
+            if(mark>average)
+            {
+                countAboveAvg++;
+            }
+        }
+            System.out.println("Average Marks:"+average);
+            System.out.println("Highest Marks:"+max);
+            System.out.println("Lowest Marks:"+min);
+            System.out.println("Students Scoring above average:"+countAboveAvg);
+
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Average Marks:86.6
+Highest Marks:92
+Lowest Marks:78
+Students Scoring above average:3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
