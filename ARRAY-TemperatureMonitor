@@ -1,0 +1,42 @@
+public class TemperatureMonitor{
+    public static void main(String[] args)
+    {
+      double[] Temperatures={30.5,32.0,28.3,35.2,31.7,29.8,33.1};
+      double total=0.0,max=Temperatures[0],min=Temperatures[0];
+      int aboveAvg=0;
+      for(double Temp:Temperatures)
+      {
+       total+=Temp;
+       if(Temp>max)
+       {
+         max=Temp;
+       }
+       if(Temp<min)
+       {
+         min=Temp;
+       }
+      }
+      double Average=(double)total/Temperatures.length;
+      for(double Temp:Temperatures)
+      {
+      if(Temp>Average)
+      {
+       aboveAvg++;
+      }
+      }
+      System.out.println("Hottest Day:"+max); 
+      System.out.println("Coldest Day:"+min); 
+      System.out.println("Average Temperature:"+Average); 
+      System.out.println("Above average Temperature:"+aboveAvg); 
+
+    }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hottest Day:35.2
+Coldest Day:28.3
+Average Temperature:31.514285714285712
+Above average Temperature:4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
