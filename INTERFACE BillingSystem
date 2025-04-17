@@ -1,0 +1,71 @@
+import java.util.Scanner;
+interface Billable
+{
+    double generateBill(double amount);
+}
+interface Discountable extends Billable
+{
+    double applyDiscount(double amount);
+}
+class RegularCustomer  implements Billable
+{
+    public double generateBill(double amount)
+    {
+      return amount;
+    }
+}
+class PremiumCustomer implements Discountable
+{
+    public double applyDiscount(double amount)
+    {
+      double discount=amount*0.2;
+      System.out.println("Premium Customer Discount:$"+discount);
+      
+      return amount-discount;
+    }
+    public double generateBill(double amount)
+    {
+      return amount;
+    }
+}
+class EmployeeCustomer implements Discountable
+{
+    public double applyDiscount(double amount)
+    {
+      double discount=amount*0.3;
+      System.out.println("Employee Customer Discount:$"+discount);
+      return amount-discount;
+    }
+    public double generateBill(double amount)
+    {
+      return amount;
+    }
+}
+public class BillingInterface
+{
+ public static void main(String[] args)
+ { 
+   Scanner sc=new Scanner(System.in);
+   double baseprice=sc.nextDouble();
+   RegularCustomer RC=new  RegularCustomer();
+   PremiumCustomer PC=new PremiumCustomer();
+   EmployeeCustomer EC=new EmployeeCustomer();
+   System.out.println("Regular Customer Bill:$"+RC.generateBill(baseprice));
+   System.out.println("Premium Customer Bill:$"+PC.applyDiscount(baseprice));
+   System.out.println("Employee Customer Bill:$"+EC.applyDiscount(baseprice));
+ }
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regular Customer Bill:$5000.0
+Premium Customer Discount:$1000.0
+Premium Customer Bill:$4000.0
+Employee Customer Discount:$1500.0
+Employee Customer Bill:$3500.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
