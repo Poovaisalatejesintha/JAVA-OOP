@@ -1,12 +1,12 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 OUTPUT:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Title:Java Programming,Author:Herbert Schildt'Available:true
+Title:Java Programming,Author:Herbert Schildt,Available:true
 Book issued to:
 Student Name:Alice'RollNo:101
-Title:Java Programming,Author:Herbert Schildt'Available:false
+Title:Java Programming,Author:Herbert Schildt,Available:false
 Book has been returned
-Title:Java Programming,Author:Herbert Schildt'Available:true
+Title:Java Programming,Author:Herbert Schildt,Available:true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 File:1
@@ -37,7 +37,7 @@ public class Book
  }
  public void displayDetails()
  {
-   System.out.println("Title:"+title+",Author:"+author+"'Available:"+available);
+   System.out.println("Title:"+title+",Author:"+author+",Available:"+available);
  }
 }
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
