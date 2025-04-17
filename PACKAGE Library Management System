@@ -1,0 +1,101 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title:Java Programming,Author:Herbert Schildt'Available:true
+Book issued to:
+Student Name:Alice'RollNo:101
+Title:Java Programming,Author:Herbert Schildt'Available:false
+Book has been returned
+Title:Java Programming,Author:Herbert Schildt'Available:true
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File:1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+package library.books;
+public class Book
+{
+   private String title;
+   private String author;
+   private boolean available=true;
+ public Book(String title,String author)
+ {
+   this.title=title;
+   this.author=author;
+ }
+ public boolean isAvailable()
+ {
+     return available;
+ }
+ public void borrow()
+ {
+   available=false;
+ }
+ public void returnBook()
+ {
+    available=true;
+ }
+ public void displayDetails()
+ {
+   System.out.println("Title:"+title+",Author:"+author+"'Available:"+available);
+ }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File:2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+package library.users;
+public class Student{
+  private String name;
+  private int rollNumber;
+ public Student(String name,int rollNumber){
+   this.name=name;
+   this.rollNumber=rollNumber;
+ }
+ public void displayInfo(){
+  System.out.println("Student Name:"+name+"'RollNo:"+rollNumber);
+ }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File:3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+package library.transactions;
+import library.books.Book;
+import library.users.Student;
+public class Transactions{
+  public void issueBook(Book book,Student student){
+    if(book.isAvailable()){
+       book.borrow();
+       System.out.println("Book issued to:");
+       student.displayInfo();
+    }
+    else
+    {
+       System.out.println("Book is currently not available:");
+     }
+}
+public void returnBook(Book book)
+{
+   book.returnBook();
+   System.out.println("Book has been returned");
+}
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+File:4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+package app;
+import library.books.Book;
+import library.users.Student;
+import library.transactions.Transactions;
+public class Main{
+   public static void main(String[] args){
+       Book book1=new Book("Java Programming","Herbert Schildt");
+       Student student1=new Student("Alice",101);
+       Transactions transaction=new Transactions();
+       book1.displayDetails();
+       transaction.issueBook (book1,student1);
+       book1.displayDetails();
+       transaction.returnBook(book1);
+       book1.displayDetails();
+   }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
