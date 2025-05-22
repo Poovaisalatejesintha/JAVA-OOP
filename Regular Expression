@@ -1,0 +1,21 @@
+//MOBILENUMBER VALIDATION
+import java.util.Scanner;
+import java.util.regex.*;
+public class MobileValidation
+{
+ public static void main(String[] args)
+ {
+  Scanner sc=new Scanner(System.in);
+  String number=sc.next();
+  Pattern pattern=Pattern.compile("^[789]\\d{9}$");
+  Matcher matcher=pattern.matcher(number);
+  if(matcher.matches())
+  {
+   System.out.println("Valid Mobile Number");
+  }
+  else
+  {
+   System.out.println("Invalid Mobile Number");
+  }
+ }
+}
