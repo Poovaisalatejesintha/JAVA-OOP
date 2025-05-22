@@ -19,3 +19,60 @@ public class MobileValidation
   }
  }
 }
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+9363474667
+Valid Mobile Number
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//EMAIL VALIDATOR
+import java.util.Scanner;
+import java.util.regex.*;
+public class MailValidation
+{
+ public static void main(String args[])
+ {
+  Scanner sc=new Scanner(System.in);
+  String mailId=sc.next();
+  Pattern pattern=Pattern.compile("^\\w+@\\w+\\.com$");
+  Matcher matcher=pattern.matcher(mailId);
+  if(matcher.matches())
+  {
+   System.out.println("Valid MailId");
+  }
+  else
+  {
+   System.out.println("Invalid MailId");
+  }
+ }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+poovai@gmail.com
+Valid MailId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//PINCODE VALIDATOR
+import java.util.Scanner;
+import java.util.regex.*;
+public class PasskeyValidator
+{
+ public static void main(String args[])
+ {
+  Scanner sc=new Scanner(System.in);
+  String code=sc.next();
+  Pattern pattern=Pattern.compile("^[0-9]{6}$");
+  Matcher matcher=pattern.matcher(code);
+  if(matcher.matches())
+  {
+   System.out.println("Valid Passcode");
+  }
+  else
+  {
+   System.out.println("Invalid Invalid Passcode");
+  }
+ }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+623522
+Valid Passcode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
