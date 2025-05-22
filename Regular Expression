@@ -76,3 +76,25 @@ OUTPUT:
 623522
 Valid Passcode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import java.util.Scanner;
+import java.util.regex.*;
+public class NumberExtracter
+{
+ public static void main(String args[])
+ {
+  Scanner sc=new Scanner(System.in);
+  String number=sc.nextLine();
+  Pattern pattern=Pattern.compile("\\d+");
+  Matcher matcher=pattern.matcher(number);
+  while(matcher.find())
+  {
+   System.out.println(matcher.group());
+  }
+ }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OUTPUT:
+number 47 bus leaves in 10 minutes
+47
+10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
