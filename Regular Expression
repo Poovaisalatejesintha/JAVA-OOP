@@ -7,7 +7,7 @@ public class MobileValidation
  {
   Scanner sc=new Scanner(System.in);
   String number=sc.next();
-  Pattern pattern=Pattern.compile("^[789]\\d{9}$");
+  Pattern pattern=Pattern.compile("^[6789]\\d{9}$");
   Matcher matcher=pattern.matcher(number);
   if(matcher.matches())
   {
